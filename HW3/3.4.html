@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task 4</title>
+    <script>
+      const checkAge = function (ages) {
+          let message = '';
+          for (index in ages) {
+              let numStr =   parseInt(ages[index].replaceAll("'",""))
+              if (isNaN(numStr)) {
+                  alert(`${numStr} is not a number`);
+                  console.log(`${numStr} is not a number`);
+                  continue;
+              }
+              let age_1 = numStr;
+              let age_2 = 18;
+              let age_3 = 60;
+
+              if (age_1 < 0) {
+                  alert(`Technical maintenance`);
+                  console.log(`Technical maintenance`);
+                  continue;
+              }
+              if (age_1 < age_2) {
+                  alert(`You don't have access cause your age is ${age_1}. It's less than necessary`);
+                  console.log(`You don't have access cause your age is ${age_1}. It's less than necessary`);
+                  continue;
+              }
+              if (age_1 >= age_2 && age_1 < age_3) {
+                  alert("Welcome!");
+                  console.log("Welcome!");
+                  continue;
+              }
+              if (age_1 > age_3) {
+                  alert("Keep calm and watch channel Culture!");
+                  console.log("Keep calm and watch channel Culture!");
+                  continue;
+              }
+
+
+          }
+      }
+    </script>
+  </head>
+
+  <body style="text-align: center">
+    <h2>Task 4</h2>
+
+    <button onclick="checkAge(prompt('Enter your age', '').split(','))">
+      Click me
+    </button>
+    <p id="message"></p>
+  </body>
+</html>
