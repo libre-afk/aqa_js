@@ -66,22 +66,3 @@ function calcSumConcat(num) {
 calcSumConcat(10);
 calcSumConcat(-1);
 calcSumConcat(8);
-
-// let n = 10
-// temp = String(n)
-// let nn = (temp) + (temp)
-// let nnn = (temp) + (temp) + (temp)
-// let result = n + Number(nn) + Number(nnn)
-// console.log("Результат равен:", result)
-
-// for (i>=1; i <=9; i++) {
-//       if (i % 3 == 0 && i % 5 == 0){
-//           console.log('Число ' + i + ' делится без остатка на 3 и на 5')}
-//       else if  (i % 5 == 0){
-//       console.log('Число ' + i + ' делится без остатка на 5')}
-//       else if  (i % 3 == 0){
-//       console.log('Число ' + i + ' делится без остатка на 3')}
-//       else{
-//       console.log(i)}
-//   }
-//   console.log(i)
