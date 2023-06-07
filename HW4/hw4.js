@@ -79,7 +79,7 @@
 // let toCamelCase = (input) => {
 //   let inputs = input.split(" ");
 //   let modified = inputs.map((word) => word[0].toUpperCase() + word.slice(1));
-//   let firstWord = modified[0].toLowerCase() //+ modified[0].slice(1);
+//   let firstWord = modified[0].toLowerCase()
 //   modified[0] = firstWord;
 //   return modified.join("");
 // };
