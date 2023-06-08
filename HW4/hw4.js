@@ -111,40 +111,26 @@
 
 // 6**. Написать программу, которая видоизменяет принимаемое слово шифром ЦЕЗАРЯ (посмотреть в википедии) со сдвигом на 1 в любую из сторон.
 
+function caesarCipher (string, offset) {
+  
+  if (offset < 0) {
+    return caesarCipher(string, offset + 26);
+  };
+console.log('Word: ' + string);
+  let result = '';
 
-function caesarCipher(word){
-let ru = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'];
-let eng = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  for (let i = 0; i < string.length; i++) {
+    let subString = string[i];
+    if (subString.match(/[a-z]/i)) {
+      let charCode = string.charCodeAt(i);
+      subString = (charCode >= 65 && charCode <= 90)
+      ? String.fromCharCode(((charCode - 65 + offset) % 26) + 65)
+      : String.fromCharCode(((charCode - 97 + offset) % 26) + 97);
+    };
 
-let shift = 1;
-console.log('Исходное слово: ' + word);
-let result = 'Измененное слово: '
-let isRu = /[а-я]/i.test(word);
-if (isRu) {
-  for (let i of word) {
-    let place = ru.indexOf(i);
-    //console.log(i, 'place=', place);
-    let newInd = place + shift;
-    //console.log(new_place);
-    if (ru.includes(i)) {
-      result += ru[newInd]
-    } else {
-      result += 1;
-    }
-  }
-} if (!isRu) 
-  for (let i of word) {
-    let place = eng.indexOf(i);
-    //console.log(i, 'place=', place);
-    let newInd = place + shift;
-   // console.log(new_place);
-    if (eng.includes(i)) {
-      result += eng[newInd]
-    } else {
-      result += 1
-    }
-  }
+    result += subString;
+  };
+  return result;
+};
 
-console.log(result)}
-caesarCipher('bcd')
-caesarCipher('бвг')
+console.log('Result: ' + caesarCipher('Yllyx', 1))
