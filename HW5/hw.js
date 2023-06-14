@@ -129,19 +129,11 @@ console.log(findMissingNumber(arr6));
 //   Вернуть массив с сугубо уникальными карточками. Реализовать методом SET.
 //   Разобраться, как считать данные из файла КОДОМ, а не копировать ручками.
 
-fetch("cards.json")
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
 
 const fs = require("fs");
 
 fs.readFile(
-  "D:\\HW\\QA_HW-main\\QA_HW-main\\aqa_js\\aqa_js\\HW6\\cards.json",
+  "D:\\HW\\QA_HW-main\\QA_HW-main\\aqa_js\\aqa_js\\HW5\\cards.json",
   "utf8",
   (err, data) => {
     if (err) {
