@@ -1,90 +1,136 @@
-// Task 1. Работа с оператором IF:
-//   1. Создать переменную “age” и присвоить ей значение 10
-//   2. Создать переменную “age_2” и присвоить ей значение 18
-//   3. Создать переменную “age_3” и присвоить ей значение 60
-//   4. Создать if в котором будите проверять значение переменной age_1
-//     Если “age” < age_2, вывести в консоль “You don’t have access cause your age is ” + “age” + “ It’s less then ”
-//     Если “age” >=  age_2 и “age” <  age_3, вывести в консоль “Welcome  !”
-//     Если “age”  > age_3, вывести в консоль “Keep calm and look Culture channel”.
-//     Иначе выводите “Technical work”.
+// 1. Написать скрипт, переводящий количество байт в нужные единицы
+// function convertToKb(bytes) {
+//   return bytes + ' bytes = ' +  (bytes / 1024).toFixed(1) + " Kb";
+// }
+// function convertToMb(bytes) {
+ 
+//   return bytes + ' bytes = ' +  (bytes /1024/1024).toFixed(1) + " Mb";
+// }
+// function convertToGb(bytes) {
+//   return bytes + ' bytes = ' +  (bytes /1024/1024/1024).toFixed(1) + " Gb";
+// }
+// function convertToTb(bytes) {
+//   return bytes + ' bytes = ' + (bytes /1024/1024/1024/1024).toFixed(1) + " Tb";
+// }
+// convertToKb(14525632);
+// console.log(convertToKb(1000));
+// console.log(convertToMb(1000000000));
+// console.log(convertToGb(1000000000000));
+// console.log(convertToTb(100000000000000));
 
-// let age_1 = 10;
-// let age_2 = 18;
-// let age_3 = 60;
 
-// if (age_1 < age_2) {
-//     console.log(`You don't have an access cause your age is ${age_1}. It's less than necessary\n` );
+// 2. Написать скрипт, который выведет 5 строк в консоль таким образом, чтобы в первой строчке выводилось :), во второй :):) и так далее
+//   Пример в консоли:
+//   :)
+//   :):)
+//   :):):)
+//   :):):):)
+//   :):):):):)
+
+//   Сделать из "*" равнобедренный треугольник и ромб
+
+// let smile = "(:";
+// let level = 5;
+// let empty = "  ";
+// let countEmptyString = level - 1;
+// let smileStr1 = "";
+// for (i = 0; i < level; i++) {
+//   console.log((smileStr1 += smile));
 // }
-// else if (age_1 >= age_2 && age_1 < age_3) {
-//     console.log("\n Welcome!");
+// console.log();
+
+// let calcEmptyStr = (num) => {
+//   return empty.repeat(countEmptyString - num);
+// };
+
+// let calcSmileStr = (num) => {
+//   return smile.repeat(1 + 2 * num);
+// };
+
+// for (j = 0; j < level; j++) {
+//   console.log(calcEmptyStr(j) + calcSmileStr(j));
 // }
-// else if (age_1  >= age_3) {
-//     console.log(`Keep calm and watch channel Culture!\n`)
+// console.log();
+// for (j = 0; j < level; j++) {
+//   console.log(calcEmptyStr(j) + calcSmileStr(j));
 // }
-// else {
-//     console.log(`Technical maintenance\n`)
+// for (j = level - 2; j >= 0; j--) {
+//   console.log(calcEmptyStr(j) + calcSmileStr(j));
 // }
 
-// Task 2*. Преобразовать написанный код в task 1 так, чтобы сначала проверялся тип данных. 
-//   И если он не number - кидалась ошибка в консоль.
-//   Проверить работу кода на следующих данных 17, 18, 61, "2", "aaa"
+// 3.  Вам нужно вывести в консоль числа от 1 до 100. (деление на 3 и 5)
 
-// const checkAge = function(...ages) {
-//     for(index in ages){ 
-//     if (isNaN(parseInt(ages[index]))){
-//         console.log(`${ages[index]} is not a number\n`);
-//         continue;
-//     }
-       
-//       let age_1 = ages[index];
-//       let age_2 = 18;
-//       let age_3 = 60;
-//     if (age_1 < age_2) {
-//         console.log(`You don't have an access cause your age is ${age_1}. It's less than necessary\n`);
-//     }
-//     else if (age_1 >= age_2 && age_1 < age_3) {
-//         console.log(`You're ${age_1}, you're welcome!\n`);
-//     }
-//     else if (age_1  >= age_3) {
-//         console.log(`You're ${age_1}, so keep calm and watch channel Culture!\n`)
-//     }
-//     else {
-//         console.log(`Technical maintenance\n`)
-//     }
+// for (i=1; i <=100; i++) {
+//     if (i % 3 == 0 && i % 5 == 0){
+//         console.log('Число ' + i + ' делится без остатка на 3 и на 5')}
+//     else if  (i % 5 == 0){
+//     console.log('Число ' + i + ' делится без остатка на 5')}
+//     else if  (i % 3 == 0){
+//     console.log('Число ' + i + ' делится без остатка на 3')}
+//     else{
+//     console.log(i)}
 // }
-// }
-    
-//     checkAge(17,18,61,'aaa','22');
+// console.log(i)
 
-//     Task 3*. Преобразовать Task 2 таким образом, чтобы значение НАПРИМЕР '2' (т.е. ЛЮБАЯ строка в которой лежит ТОЛЬКО ЦИФРА) пропускалось, 
-//   преобразовываясь в number
-// const checkAge = function(...ages) {
-//     for(index in ages){ 
-//     if (isNaN(parseInt(ages[index]))){
-//         console.log(`${ages[index]} is not a number\n`);
-//         continue;
-//     }
-       
-//       let age_1 = ages[index];
-//       let age_2 = 18;
-//       let age_3 = 60;
-//     if (age_1 < age_2) {
-//         console.log(`You don't have an access cause your age is ${age_1}. It's less than necessary\n`);
-//     }
-//     else if (age_1 >= age_2 && age_1 < age_3) {
-//         console.log(`You're ${age_1}, you're welcome!\n`);
-//     }
-//     else if (age_1  >= age_3) {
-//         console.log(`You're ${age_1}, so keep calm and watch channel Culture!\n`)
-//     }
-//     else {
-//         console.log(`Technical maintenance\n`)
-//     }
-// }
-// }
-    
-//     checkAge(17,'18',61,'Z','22');
+// 4. Написать скрипт, который преобразует любое предложение в camelCase. Первое слово должно начинаться с буквы в нижнем регистре,
+//   у остальных -  верхнем. Пример: I am super engineer => iAmSuperEngineer
 
-  //  Task 4*. Преобразовать Task 3* таким образом, чтобы age принимался через prompt в привязанной вёрстке, а результат выводился в alert
+// let input = "You are super engineer";
+// let toCamelCase = (input) => {
+//   let inputs = input.split(" ");
+//   let modified = inputs.map((word) => word[0].toUpperCase() + word.slice(1));
+//   let firstWord = modified[0].toLowerCase()
+//   modified[0] = firstWord;
+//   return modified.join("");
+// };
+// console.log(toCamelCase(input));
 
-  console.log('Check 3.4.html file')
+
+// 5*. Создать программу, которая будет принимать на вход СЛОВО (одно), и возвращать количество гласных и согласных букв в этом слове. 
+//   Ответ должен выводиться шаблонным литералом вида word contains x vowels and y consonants
+
+// function getWordStructure(word) {
+//   let word1 = word.replace(/[^a-zа-яё]/gi, '')
+//   let vowelsEN = ['a', 'e', 'i', 'o', 'u', 'y'];
+//   let vowelsRU = ["а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я"];
+//   let isRU = /[а-яё]/i.test(word);
+//   let numOfVowels = 0;
+//   let numOfСonsonants = 0;
+//   if (isRU) {
+//       word1.toLowerCase().split("").forEach(v => vowelsRU.includes(v) ? numOfVowels++ : numOfСonsonants++)
+//   }
+//   if (!isRU) {
+//       word1.toLowerCase().split("").forEach(v => vowelsEN.includes(v) ? numOfVowels++ : numOfСonsonants++)
+//   }
+//   console.log(`Word ${word} contains ${numOfVowels} vowels and ${numOfСonsonants} consonants`);
+// }
+
+// getWordStructure('Floccinaucinihilipilification');
+// getWordStructure('Электрофорез');
+// getWordStructure(prompt('Enter something:', ""));
+
+// 6**. Написать программу, которая видоизменяет принимаемое слово шифром ЦЕЗАРЯ (посмотреть в википедии) со сдвигом на 1 в любую из сторон.
+
+function caesarCipher (string, offset) {
+  
+  if (offset < 0) {
+    return caesarCipher(string, offset + 26);
+  };
+console.log('Word: ' + string);
+  let result = '';
+
+  for (let i = 0; i < string.length; i++) {
+    let subString = string[i];
+    if (subString.match(/[a-z]/i)) {
+      let charCode = string.charCodeAt(i);
+      subString = (charCode >= 65 && charCode <= 90)
+      ? String.fromCharCode(((charCode - 65 + offset) % 26) + 65)
+      : String.fromCharCode(((charCode - 97 + offset) % 26) + 97);
+    };
+
+    result += subString;
+  };
+  return result;
+};
+
+console.log('Result: ' + caesarCipher('Yllyx', 1))

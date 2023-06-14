@@ -1,68 +1,90 @@
-// Task 1. Работа с переменными:
+// Task 1. Работа с оператором IF:
+//   1. Создать переменную “age” и присвоить ей значение 10
+//   2. Создать переменную “age_2” и присвоить ей значение 18
+//   3. Создать переменную “age_3” и присвоить ей значение 60
+//   4. Создать if в котором будите проверять значение переменной age_1
+//     Если “age” < age_2, вывести в консоль “You don’t have access cause your age is ” + “age” + “ It’s less then ”
+//     Если “age” >=  age_2 и “age” <  age_3, вывести в консоль “Welcome  !”
+//     Если “age”  > age_3, вывести в консоль “Keep calm and look Culture channel”.
+//     Иначе выводите “Technical work”.
 
-let item_1 = 5;
-console.log(item_1);
+// let age_1 = 10;
+// let age_2 = 18;
+// let age_3 = 60;
 
-let item_2 = 3;
-console.log(item_2);
+// if (age_1 < age_2) {
+//     console.log(`You don't have an access cause your age is ${age_1}. It's less than necessary\n` );
+// }
+// else if (age_1 >= age_2 && age_1 < age_3) {
+//     console.log("\n Welcome!");
+// }
+// else if (age_1  >= age_3) {
+//     console.log(`Keep calm and watch channel Culture!\n`)
+// }
+// else {
+//     console.log(`Technical maintenance\n`)
+// }
 
-let item_3 = item_1 + item_2;
-console.log(item_3);
+// Task 2*. Преобразовать написанный код в task 1 так, чтобы сначала проверялся тип данных. 
+//   И если он не number - кидалась ошибка в консоль.
+//   Проверить работу кода на следующих данных 17, 18, 61, "2", "aaa"
 
-let item_4 = "Yolochka";
-console.log(item_4);
-console.log(item_3 + item_4);
-console.log(item_3 * item_4);
+// const checkAge = function(...ages) {
+//     for(index in ages){ 
+//     if (isNaN(parseInt(ages[index]))){
+//         console.log(`${ages[index]} is not a number\n`);
+//         continue;
+//     }
+       
+//       let age_1 = ages[index];
+//       let age_2 = 18;
+//       let age_3 = 60;
+//     if (age_1 < age_2) {
+//         console.log(`You don't have an access cause your age is ${age_1}. It's less than necessary\n`);
+//     }
+//     else if (age_1 >= age_2 && age_1 < age_3) {
+//         console.log(`You're ${age_1}, you're welcome!\n`);
+//     }
+//     else if (age_1  >= age_3) {
+//         console.log(`You're ${age_1}, so keep calm and watch channel Culture!\n`)
+//     }
+//     else {
+//         console.log(`Technical maintenance\n`)
+//     }
+// }
+// }
+    
+//     checkAge(17,18,61,'aaa','22');
 
-let item_5 = item_3;
-let item_6 = 15;
-let item_6_type = typeof item_6;
-console.log(`item_6 == ${item_6}, item_6_type == ${item_6_type}`);
-let item_7 = String(item_6);
-let item_7_type = typeof item_7;
-console.log(`item_7 == ${item_7}, item_7_type == ${item_7_type}`);
+//     Task 3*. Преобразовать Task 2 таким образом, чтобы значение НАПРИМЕР '2' (т.е. ЛЮБАЯ строка в которой лежит ТОЛЬКО ЦИФРА) пропускалось, 
+//   преобразовываясь в number
+// const checkAge = function(...ages) {
+//     for(index in ages){ 
+//     if (isNaN(parseInt(ages[index]))){
+//         console.log(`${ages[index]} is not a number\n`);
+//         continue;
+//     }
+       
+//       let age_1 = ages[index];
+//       let age_2 = 18;
+//       let age_3 = 60;
+//     if (age_1 < age_2) {
+//         console.log(`You don't have an access cause your age is ${age_1}. It's less than necessary\n`);
+//     }
+//     else if (age_1 >= age_2 && age_1 < age_3) {
+//         console.log(`You're ${age_1}, you're welcome!\n`);
+//     }
+//     else if (age_1  >= age_3) {
+//         console.log(`You're ${age_1}, so keep calm and watch channel Culture!\n`)
+//     }
+//     else {
+//         console.log(`Technical maintenance\n`)
+//     }
+// }
+// }
+    
+//     checkAge(17,'18',61,'Z','22');
 
-// Task2*. Решить квадратные уравнения. Переменные называть по правилам.
-// Вывести в консоль ответы в виде "Ответ к уравнению 1: <корень>", "Ответ к уравнению 2: <корень> и <корень>"
-// 1.  x2 - 6x + 9 = 0. - один корень
-// 2.  x2 - 4x - 5 = 0. - два корня
+  //  Task 4*. Преобразовать Task 3* таким образом, чтобы age принимался через prompt в привязанной вёрстке, а результат выводился в alert
 
-let formula1 = "x2 - 6x + 9 = 0";
-let a1 = 1;
-let b1 = 6;
-let c1 = 9;
-
-let formula2 = "x2 - 4x - 5 = 0";
-let a2 = 1;
-let b2 = 4;
-let c2 = -5;
-let descr = (a, b, c) => {
-  return Math.pow(b, 2) - 4 * a * c;
-};
-
-let calc = (a, b, c) => {
-  let x1 = ((-b + Math.sqrt(descr(a, b, c))) / 2) * a;
-  var x2 = ((-b - Math.sqrt(descr(a, b, c))) / 2) * a;
-  if (x1 === x2) {
-    return x1;
-  }
-  return x1 + " и " + x2;
-};
-
-console.log("Ответ к уравнению 1: " + calc(a1, b1, c1));
-console.log("Ответ к уравнению 2: " + calc(a2, b2, c2));
-
-// Task3**. Напишите программу, которая принимает целое положительное число n, 1 <= n <= 9, и выводит сумму равную
-// n + nn + nnn, где n не перемножаются, а конкатенируются
-function calcSumConcat(num) {
-  if (num >= 1 && num <= 9) {
-    temp = String(num);
-    let nn = temp + temp;
-    let nnn = temp + temp + temp;
-    let result = num + Number(nn) + Number(nnn);
-    console.log("Результат равен:", result);
-  } else console.log(num + " is out of range");
-}
-calcSumConcat(10);
-calcSumConcat(-1);
-calcSumConcat(8);
+  console.log('Check 3.4.html file')
