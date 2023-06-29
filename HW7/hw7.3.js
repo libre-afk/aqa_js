@@ -19,11 +19,16 @@ class AQA {
   }
 }
 
-class AQAnew extends AQA {
-  getCV() {
-    return super.getCV(this);
+class AQAnew {
+  constructor(experience_in_years, grade, name, desiredSalary, skills) {
+    this.experience_in_years = experience_in_years;
+    this.grade = grade;
+    this.name = name;
+    this.desiredSalary = desiredSalary;
+    this.skills = skills;
   }
 }
+
 const aqa = new AQA(3, "Middle", "Anatoly Karpovich", 3000, [
   "typescript",
   "automation",
@@ -36,7 +41,7 @@ const aqaNew = new AQAnew(1, "Junior", "", 2500, [
   "effective communication",
   "cross-team sync",
 ]);
-console.log(aqaNew.getCV());
+console.log(aqa.getCV.call(aqaNew));
 
 
 ///task 2
@@ -44,7 +49,6 @@ console.log(aqaNew.getCV());
 String.prototype.removeSpecialCharacters = function() {
     return this.replace(/[^\w\s]/gi, '');
   };
-  const str = 'HE!!LL??OO';
-  const str1 = 'c!a@n y#o$u h%e&a^r m*e?'
-  console.log(str.removeSpecialCharacters()); 
-  console.log(str1.removeSpecialCharacters());    
+  
+  console.log('HE!!LL??OO'.removeSpecialCharacters()); 
+  console.log('c!a@n y#o$u h%e&a^r m*e?'.removeSpecialCharacters());    

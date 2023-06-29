@@ -25,7 +25,7 @@ function generateTeamHTML(team) {
   
     const teammatesHTML = `<ul>${team.getTeammates().map(teammate => `<li>${teammate}</li>`).join('')}</ul>`;
   
-    const tasksHTML = `<ul>${team.getTasks().map(task => `<li>${task}</li>`).join('')}</ul>`;
+    const tasksHTML = `<ul>${team.showAllTasks().map(task => `<li>${task}</li>`).join('')}</ul>`;
   
     const teamHTML = `${teamNameHTML}${sprintDurationHTML}${releaseDateHTML}${standupTimeHTML}${numOfTeammatesHTML}${teammatesHTML}${tasksHTML}`;
   
@@ -40,3 +40,4 @@ function generateTeamHTML(team) {
   }
   
 displayTeamInfo();
+
